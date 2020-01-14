@@ -7,10 +7,24 @@ public class FrogCode {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        boolean bool = true;
+        String resp = "";
+        while (bool) {
+            System.out.println("Do you want to jump frog by time or distance?");
+            System.out.println("If time type 1 & enter.");
+            System.out.println("If distance type 2 & enter.");
 
-//        jumpOnTime(scanner);
-        jumbOnDistance(scanner);
-
+            resp = scanner.nextLine();
+            if (resp.equals("1")) {
+                jumpOnTime(scanner);
+                bool = false;
+            } else if (resp.equals("2")) {
+                jumbOnDistance(scanner);
+                bool = false;
+            } else {
+                System.out.println("Invalid Input.\n");
+            }
+        }
     }
 
     private static void jumbOnDistance(Scanner scanner) {
