@@ -25,6 +25,9 @@ public class FrogCode {
                 System.out.println("Invalid Input.\n");
             }
         }
+
+        scanner.close();
+
     }
 
     private static void jumbOnDistance(Scanner scanner) {
@@ -55,16 +58,16 @@ public class FrogCode {
         while (distance != 0) {
 
             if (distance >= 5) {
-                distance = distance - 5;
+                distance -= 5;
                 time++;
 
                 if (distance >= 3) {
-                    distance = distance - 3;
-                    time = time + 2;
+                    distance -= 3;
+                    time += 2;
 
                     if (distance >= 1) {
                         distance--;
-                        time = time + 5;
+                        time += 5;
 
                         distanceJumped = Integer.parseInt(distanceString) - distance;
 
@@ -114,17 +117,17 @@ public class FrogCode {
 
         while (time >= 0) {
 
-            distance = distance + 5;
+            distance += 5;
             if (time >= 1) {
                 time--;
-                distance = distance + 3;
+                distance += 3;
 
                 if (time >= 2) {
-                    time = time - 2;
+                    time -= 2;
                     distance++;
 
                     if (time >= 5) {
-                        time = time - 5;
+                        time -= 5;
                     } else {
                         time = -1;
                     }
